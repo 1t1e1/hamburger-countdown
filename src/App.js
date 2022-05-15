@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import styled from "styled-components";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import "./app.css";
+
+import { CountDownProvider } from "./context/useCountDown";
+
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Sidebar from "./components/Sidebar";
+
+const Body = styled.div`
+	background-color: red;
+	padding: 2rem;
+	/* display inside main */
+	/* position: relative; */
+`;
+
+const Main = styled.main`
+	/* margin: 1em; */
+	/* position: relative; */
+	min-height: 50vh;
+`;
+
+const App = () => {
+	return (
+		<CountDownProvider>
+			<Header />
+			<Body>
+				<Main>
+					<h1>Hello. This is main Component </h1>
+				</Main>
+				<Sidebar></Sidebar>
+			</Body>
+			<Footer />
+		</CountDownProvider>
+	);
+};
 
 export default App;
