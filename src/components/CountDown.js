@@ -1,22 +1,18 @@
 import React, { useState, useContext } from "react";
 import styled from "styled-components";
 
-import tnt from "../assets/bomb-tnt.gif";
+import tntGif from "../assets/bomb-tnt.gif";
 
 import CountContext from "../context/useCountDown";
 
 export default function CountDown() {
-	const [change, setChange] = useState(true);
-	const { tick } = useContext(CountContext);
-	console.log("value", typeof tick === "undefined");
-	console.log("typeof", typeof tick);
+	const { seconds, running } = useContext(CountContext);
 
 	return (
 		<>
-			<P onClick={(e) => setChange(!change)}>Time :</P>
-			<P>60</P>
-			{change ? (
-				<Img src={tnt} alt="ticking bomb" />
+			<P>Time : {running ? seconds : "  "}</P>
+			{seconds ? (
+				<Img src={tntGif} alt="ticking bomb" />
 			) : (
 				<Container>
 					<FireWork></FireWork>
@@ -28,17 +24,17 @@ export default function CountDown() {
 
 const Img = styled.img`
 	height: 4rem;
+	margin-left: 3rem;
 `;
 
 const P = styled.p`
 	margin-left: 1rem;
-	min-width: 3rem;
 `;
 
 const Container = styled.div`
 	display: inline;
 	position: relative;
-	margin-left: 2.5rem;
+	margin-left: 5.5rem;
 `;
 
 const FireWork = styled.div`

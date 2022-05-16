@@ -1,32 +1,23 @@
-import React, { useState, useEffect } from "react";
+import { createContext } from "react";
 
-const CountContext = React.createContext();
+import { useTimer } from "../hooks/useTimer";
+
+const CountContext = createContext();
 
 export default CountContext;
 
 export function CountDownProvider({ children }) {
-	const [remainingTime, setRemainingTime] = useState(60);
-
-	// useEffect(() => {
-	// 	const timerID = setInterval(() => {}, 1000);
-	// 	return () => clearInterval(timerID);
-	// }, [decreaseSeconds]);
-
-	// const decreaseSeconds = () => {
-	// 	// setRemainingTime((time) => {
-	// 	// 	if (time <= 0) {
-	// 	// 		return 0;
-	// 	// 	} else {
-	// 	// 		return time - 1;
-	// 	// 	}
-	// 	// });
-	// };
+	const { running, seconds, start } = useTimer({
+		seconds: 10,
+		// running: true,
+	});
 
 	return (
 		<CountContext.Provider
 			value={{
-				tick: remainingTime,
-				start: "start",
+				running,
+				seconds,
+				start,
 			}}
 		>
 			{children}

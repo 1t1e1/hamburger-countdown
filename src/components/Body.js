@@ -1,7 +1,7 @@
-import React from "react";
 import styled from "styled-components";
 
 import Sidebar from "./Sidebar";
+import Main from "./Main";
 
 const StyledBody = styled.div`
 	background-color: red;
@@ -10,18 +10,10 @@ const StyledBody = styled.div`
 	/* position: relative; */
 `;
 
-const Main = styled.main`
-	/* margin: 1em; */
-	/* position: relative; */
-	min-height: 50vh;
-`;
-
 const Body = () => {
 	return (
 		<StyledBody>
-			<Main>
-				<h1>Hello. This is main Component </h1>
-			</Main>
+			<Main></Main>
 			<Sidebar></Sidebar>
 		</StyledBody>
 	);
