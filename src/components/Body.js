@@ -5,7 +5,8 @@ import Main from "./Main";
 
 const StyledBody = styled.div`
 	background-color: red;
-	padding: 2rem;
+	padding: 1rem 2rem 2rem 4rem;
+	position: relative;
 `;
 
 const Body = () => {

@@ -15,7 +15,7 @@ const StyledHeader = styled.header`
 	background-color: #89b7ba;
 	min-height: 4rem;
 	width: 100%;
-	padding-left: 4rem;
+	padding-left: 3rem;
 	display: flex;
 	align-items: center;
 `;
