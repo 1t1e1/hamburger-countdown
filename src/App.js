@@ -1,5 +1,3 @@
-import React from "react";
-
 import "./app.css";
 
 import { CountDownProvider } from "./context/useCountDown";

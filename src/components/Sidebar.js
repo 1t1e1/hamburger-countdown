@@ -1,6 +1,27 @@
-import React from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import { CgClose, CgMenuLeftAlt } from "react-icons/cg";
+
+const Sidebar = () => {
+	const [open, setOpen] = useState(false);
+
+	return (
+		<div>
+			<Burger open={open} setOpen={setOpen} />
+			<Menu open={open} setOpen={setOpen} />
+		</div>
+	);
+};
+
+const Menu = ({ open }) => {
+	return (
+		<StyledMenu open={open}>
+			<a> Sidebar</a>
+			<a> menu</a>
+			<a> Link</a>
+		</StyledMenu>
+	);
+};
 
 const StyledMenu = styled.nav`
 	background: #effffa;
@@ -42,16 +63,6 @@ const StyledMenu = styled.nav`
 	}
 `;
 
-const Menu = ({ open }) => {
-	return (
-		<StyledMenu open={open}>
-			<a> Sidebar</a>
-			<a> menu</a>
-			<a> Link</a>
-		</StyledMenu>
-	);
-};
-
 const StyledBurger = styled.button`
 	position: absolute;
 	z-index: 10;
@@ -87,21 +98,6 @@ const Burger = ({ open, setOpen }) => {
 		<StyledBurger open={open} onClick={() => setOpen(!open)}>
 			{open ? <CgClose /> : <CgMenuLeftAlt color="#effffb" />}
 		</StyledBurger>
-	);
-};
-
-const Container = styled.div`
-	/* margin: 1em; */
-`;
-
-const Sidebar = () => {
-	const [open, setOpen] = React.useState(false);
-
-	return (
-		<Container>
-			<Burger open={open} setOpen={setOpen} />
-			<Menu open={open} setOpen={setOpen} />
-		</Container>
 	);
 };
 

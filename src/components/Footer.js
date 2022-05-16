@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 const StyledFooter = styled.footer`
@@ -8,9 +7,8 @@ const StyledFooter = styled.footer`
 	padding-left: 4rem;
 	display: flex;
 	align-items: center;
-	/* justify-content: center; */
 `;
 
 export default function Footer() {
-	return <StyledFooter>Footer Component</StyledFooter>;
+	return <StyledFooter>Footer</StyledFooter>;
 }

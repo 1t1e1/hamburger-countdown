@@ -9,7 +9,6 @@ export default CountContext;
 export function CountDownProvider({ children }) {
 	const { running, seconds, start, reset } = useTimer({
 		seconds: 10,
-		// running: true,
 	});
 
 	return (
