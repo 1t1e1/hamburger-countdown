@@ -1,20 +1,30 @@
-// import { AiOutlineClose } from "react-icons/ai";
+import React from "react";
+import styled from "styled-components";
 
-// import styled from "styled-components";
+import Sidebar from "./Sidebar";
 
-// import CountDown from "./CountDown";
+const StyledBody = styled.div`
+	background-color: red;
+	padding: 2rem;
+	/* display inside main */
+	/* position: relative; */
+`;
 
-// export default function Body(props) {
-// 	const { sidebarState, handleSidebar } = { props };
+const Main = styled.main`
+	/* margin: 1em; */
+	/* position: relative; */
+	min-height: 50vh;
+`;
 
-// 	return (
-// 		<StyledBody>
-// 			<Main>
-// 				Body
-// 				<p>{sidebarState ? "open" : "close"}</p>
-// 				{/* <CountDown /> */}
-// 			</Main>
-// 			<Aside></Aside>
-// 		</StyledBody>
-// 	);
-// }
+const Body = () => {
+	return (
+		<StyledBody>
+			<Main>
+				<h1>Hello. This is main Component </h1>
+			</Main>
+			<Sidebar></Sidebar>
+		</StyledBody>
+	);
+};
+
+export default Body;
