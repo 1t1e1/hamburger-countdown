@@ -7,7 +7,7 @@ const CountContext = createContext();
 export default CountContext;
 
 export function CountDownProvider({ children }) {
-	const { running, seconds, start } = useTimer({
+	const { running, seconds, start, reset } = useTimer({
 		seconds: 10,
 		// running: true,
 	});
@@ -18,6 +18,7 @@ export function CountDownProvider({ children }) {
 				running,
 				seconds,
 				start,
+				reset,
 			}}
 		>
 			{children}

@@ -23,6 +23,10 @@ export const useTimer = ({
 	);
 
 	const start = () => setRunning(true);
+	const reset = () => {
+		setRunning(true);
+		setSeconds(initialSeconds);
+	};
 
 	useEffect(() => {
 		const timerID = setInterval(tick, 1000);
@@ -30,5 +34,5 @@ export const useTimer = ({
 		return () => clearInterval(timerID);
 	}, [tick]);
 
-	return { running, seconds, start };
+	return { running, seconds, start, reset };
 };

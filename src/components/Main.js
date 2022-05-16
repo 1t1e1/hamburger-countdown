@@ -10,7 +10,7 @@ const StyledMain = styled.main`
 `;
 
 const Main = () => {
-	const { start } = useContext(CountContext);
+	const { start, reset } = useContext(CountContext);
 
 	useEffect(() => {
 		start();
@@ -19,8 +19,14 @@ const Main = () => {
 	return (
 		<StyledMain>
 			<h1>Hello. This is main Component </h1>
+			<Button onClick={reset}>Start Again!</Button>
 		</StyledMain>
 	);
 };
+
+const Button = styled.button`
+	background: "white";
+	margin-top: 1rem;
+`;
 
 export default Main;
